@@ -3,7 +3,7 @@ import {useState} from 'react'
 import './App.css'
 import HeroSection from './components/hero/Hero';
 import ReferralFormModal from './components/referralFormModal/ReferralFormModal';
-import Carousels from './components/carousels/Carousels'
+import Carousels from './components/carousel/Carousels'
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);

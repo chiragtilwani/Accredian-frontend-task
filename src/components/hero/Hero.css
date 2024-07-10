@@ -1,9 +1,19 @@
 .hero {
-    text-align: center;
-    padding: .2rem;
-    background: #EEF5FF;
-  }
+  padding: .2rem;
+  background: #EEF5FF;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.hero-section {
+  text-align: center;
+}
 
 .button {
-    margin-top:.3rem;
-  }
+  margin-top: .3rem;
+  background-color: #1A73E8 !important;
+  color: white !important;
+}

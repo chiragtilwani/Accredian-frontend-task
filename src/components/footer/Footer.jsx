@@ -12,7 +12,6 @@ import { LiaCcDiscover } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-
   return (
     <div className="footerOutterContainer">
       <div className="footerContainer">
@@ -90,8 +89,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyrightLine">
-        ©Copyright 2024 | Refer And Earn | All Rights Reserved | Powered by Chirag
-        Tilwani
+        ©Copyright 2024 | Refer And Earn | All Rights Reserved | Powered by
+        Chirag Tilwani
       </div>
     </div>
   );

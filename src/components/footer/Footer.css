@@ -82,3 +82,27 @@
     width: 100vw;
     font-size: .8rem;
 }
+
+@media screen and (max-width:768px) {
+    .footerContainer {
+        height: inherit;
+    }
+
+    .copyrightLine {
+        position: relative;
+    }
+}
+@media screen and (max-width:426px) {
+    .footerContainer {
+        flex-direction: column;
+    }
+
+    .footerLeft,
+    .footerMid,
+    .footerRight {
+        width: 100%;
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+    }
+}

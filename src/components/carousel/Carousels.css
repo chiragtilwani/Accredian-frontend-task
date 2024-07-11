@@ -1,5 +1,3 @@
-
-
 .BannerItemContainer {
     height: 30rem;
 }
@@ -7,4 +5,16 @@
 .bannerImage {
     height: 100%;
     object-fit: fill;
+}
+
+@media screen and (max-width: 768px) {
+    .BannerItemContainer {
+        height: 20rem
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .BannerItemContainer {
+        height: 10rem
+    }
 }

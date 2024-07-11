@@ -4,6 +4,10 @@ import "./Hero.css";
 import CustomizedSteppers from '../stepper/CustomizedSteppers'
 
 const HeroSection = (props) => {
+
+  function handleClick() {
+    props.onReferNow()
+  }
   return (
     <div className="hero">
       <div className="hero-section">
@@ -16,7 +20,7 @@ const HeroSection = (props) => {
       <Button
         variant="contained"
         className="button"
-        onClick={props.handleReferBtnClick}
+        onClick={handleClick}
       >
         Refer Now
       </Button>

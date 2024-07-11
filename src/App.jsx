@@ -4,6 +4,7 @@ import './App.css'
 import HeroSection from './components/hero/Hero';
 import ReferralFormModal from './components/referralFormModal/ReferralFormModal';
 import Carousels from './components/carousel/Carousels'
+import Footer from './components/footer/Footer'
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,6 +28,7 @@ const App = () => {
       <Carousels/>
       <HeroSection onReferNow={handleReferNow} />
       <ReferralFormModal open={modalOpen} onClose={handleCloseModal} onSubmit={handleSubmit} />
+      <Footer/>
     </div>
   );
 };

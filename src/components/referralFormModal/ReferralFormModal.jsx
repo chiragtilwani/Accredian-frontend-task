@@ -9,13 +9,13 @@ const validationSchema = Yup.object({
   refereeEmail: Yup.string().email('Invalid email address').required('Required'),
 });
 
-const ReferralFormModal = (props) => (
-  <Dialog open={props.open} onClose={props.onClose}>
+const ReferralFormModal = ({open,onClose,onSubmit}) => (
+  <Dialog open={open} onClose={onClose}>
     <DialogTitle>Refer a Friend</DialogTitle>
     <Formik
       initialValues={{ referrerName: '', referrerEmail: '', refereeName: '', refereeEmail: '' }}
       validationSchema={validationSchema}
-      onSubmit={props.onSubmit}
+      onSubmit={onSubmit}
     >
       {({ errors, touched }) => (
         <Form>
@@ -60,7 +60,7 @@ const ReferralFormModal = (props) => (
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={props.onClose} color="primary">Cancel</Button>
+            <Button onClick={onClose} color="primary">Cancel</Button>
             <Button type="submit" color="primary">Submit</Button>
           </DialogActions>
         </Form>

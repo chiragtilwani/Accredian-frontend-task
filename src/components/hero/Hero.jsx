@@ -8,6 +8,7 @@ const HeroSection = (props) => {
   function handleClick() {
     props.onReferNow()
   }
+  
   return (
     <div className="hero">
       <div className="hero-section">

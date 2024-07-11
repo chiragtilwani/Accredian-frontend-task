@@ -17,6 +17,7 @@ const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [token, setToken] = useState(null);
   const [loginFormOpen, setLoginFormOpen] = useState(false);
+  const [name, setName] = useState(null);
 
   useEffect(() => {
     try {
@@ -75,12 +76,15 @@ const App = () => {
           loginFormOpen={loginFormOpen}
           setLoginFormOpen={setLoginFormOpen}
           setToken={setToken}
+          setName={setName}
         />
         <Header
           isAuthenticated={!!token}
           setToken={setToken}
           loginFormOpen={loginFormOpen}
           setLoginFormOpen={setLoginFormOpen}
+          name={name}
+          setName={setName}
         />
         <Carousels />
         <HeroSection onReferNow={handleReferNow} />

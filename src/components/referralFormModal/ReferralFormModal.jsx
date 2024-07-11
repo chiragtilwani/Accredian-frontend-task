@@ -3,8 +3,8 @@ import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
 const validationSchema = Yup.object({
-  referrerName: Yup.string().required('Required'),
-  referrerEmail: Yup.string().email('Invalid email address').required('Required'),
+  // referrerName: Yup.string().required('Required'),
+  // referrerEmail: Yup.string().email('Invalid email address').required('Required'),
   refereeName: Yup.string().required('Required'),
   refereeEmail: Yup.string().email('Invalid email address').required('Required'),
 });
@@ -13,14 +13,14 @@ const ReferralFormModal = ({open,onClose,onSubmit}) => (
   <Dialog open={open} onClose={onClose}>
     <DialogTitle>Refer a Friend</DialogTitle>
     <Formik
-      initialValues={{ referrerName: '', referrerEmail: '', refereeName: '', refereeEmail: '' }}
+      initialValues={{ refereeName: '', refereeEmail: '' }}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
       {({ errors, touched }) => (
         <Form>
           <DialogContent>
-            <Field
+            {/* <Field
               name="referrerName"
               as={TextField}
               label="Your Name"
@@ -38,7 +38,7 @@ const ReferralFormModal = ({open,onClose,onSubmit}) => (
               margin="normal"
               error={touched.referrerEmail && !!errors.referrerEmail}
               helperText={touched.referrerEmail && errors.referrerEmail}
-            />
+            /> */}
             <Field
               name="refereeName"
               as={TextField}

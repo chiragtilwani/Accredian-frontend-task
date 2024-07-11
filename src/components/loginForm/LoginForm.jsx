@@ -46,6 +46,7 @@ const LoginForm = (props) => {
     try {
       const res = await loginPromise;
       login && localStorage.setItem("token", res.data.token);
+      login && props.setName(res.data.name)
       login ? props.setLoginFormOpen(false) : setLogin(true);
       login && props.setToken(res.data.token);
       resetForm();

@@ -1,21 +1,22 @@
-import { Formik, Form, Field, useFormikContext } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./LoginForm.css";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
-// Validation schema
+
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string().min(6, "Password too short").required("Required"),
 });
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string().required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
@@ -24,8 +25,6 @@ const SignupSchema = Yup.object().shape({
 
 const LoginForm = (props) => {
   const [login, setLogin] = useState(true);
-
-//   const { resetForm } = useFormikContext();
 
   const loginInitialValues = { email: "", password: "" };
   const signupInitialValues = { name: "", email: "", password: "" };
@@ -57,13 +56,11 @@ const LoginForm = (props) => {
 
   function handleLinkClick() {
     setLogin((prev) => !prev);
-    // resetForm()
   }
 
   function handleFormContainerClick(e) {
     e.stopPropagation();
     props.setLoginFormOpen(false);
-    // resetForm()
   }
 
   function handleFormClick(e) {

@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, useFormikContext } from "formik";
 import * as Yup from "yup";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { useState } from "react";
@@ -25,10 +25,12 @@ const SignupSchema = Yup.object().shape({
 const LoginForm = (props) => {
   const [login, setLogin] = useState(true);
 
+//   const { resetForm } = useFormikContext();
+
   const loginInitialValues = { email: "", password: "" };
   const signupInitialValues = { name: "", email: "", password: "" };
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values,{resetForm}) => {
     const loginPromise = axios.post(
       `${baseUrl}/${login ? "login" : "register"}`,
       values
@@ -46,6 +48,7 @@ const LoginForm = (props) => {
       login && localStorage.setItem("token", res.data.token);
       login ? props.setLoginFormOpen(false) : setLogin(true);
       login && props.setToken(res.data.token);
+      resetForm();
     } catch (error) {
       console.error("Error during referral submission:", error);
     }
@@ -53,11 +56,13 @@ const LoginForm = (props) => {
 
   function handleLinkClick() {
     setLogin((prev) => !prev);
+    // resetForm()
   }
 
   function handleFormContainerClick(e) {
     e.stopPropagation();
     props.setLoginFormOpen(false);
+    // resetForm()
   }
 
   function handleFormClick(e) {

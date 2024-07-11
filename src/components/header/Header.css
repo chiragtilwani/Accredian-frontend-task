@@ -1,0 +1,23 @@
+.header-container {
+    background: #EEF5FF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:.5rem 2rem;
+    flex-direction: row;
+}
+
+.header-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.LogoutBtn {
+    background-color: red !important;
+    color:white !important
+}
+
+.LoginBtn {
+    background-color: #1A73E8 !important;
+    color:white !important
+}

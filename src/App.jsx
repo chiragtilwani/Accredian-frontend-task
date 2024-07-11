@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
 import HeroSection from "./components/hero/Hero";
@@ -7,14 +9,13 @@ import ReferralFormModal from "./components/referralFormModal/ReferralFormModal"
 import Carousels from "./components/carousel/Carousels";
 import Footer from "./components/footer/Footer";
 import LoginForm from "./components/loginForm/LoginForm";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Header from "./components/header/Header";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
 const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(null);
   const [loginFormOpen, setLoginFormOpen] = useState(false);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const App = () => {
 
   const handleReferNow = () => {
     if (!token) {
-      toast.warn('You must be logged in to perform this action.')
+      toast.warn("You must be logged in to perform this action.");
       handleCloseModal();
       setLoginFormOpen(true);
     } else {
@@ -56,7 +57,7 @@ const App = () => {
       });
 
       try {
-        await referPromise; 
+        await referPromise;
       } catch (error) {
         console.error("Error during referral submission:", error);
       }
@@ -70,7 +71,17 @@ const App = () => {
     <>
       <div className="container">
         <ToastContainer position="top-center" />
-        <LoginForm loginFormOpen={loginFormOpen} setLoginFormOpen={setLoginFormOpen} setToken={setToken} />
+        <LoginForm
+          loginFormOpen={loginFormOpen}
+          setLoginFormOpen={setLoginFormOpen}
+          setToken={setToken}
+        />
+        <Header
+          isAuthenticated={!!token}
+          setToken={setToken}
+          loginFormOpen={loginFormOpen}
+          setLoginFormOpen={setLoginFormOpen}
+        />
         <Carousels />
         <HeroSection onReferNow={handleReferNow} />
         <ReferralFormModal

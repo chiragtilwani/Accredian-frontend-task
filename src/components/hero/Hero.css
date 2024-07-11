@@ -17,3 +17,19 @@
   background-color: #1A73E8 !important;
   color: white !important;
 }
+
+@media screen and (max-width: 426px) {
+  .typography-h2 {
+    font-size: 2rem !important
+  }
+
+  .typography-h5 {
+    font-size: 1rem !important
+  }
+
+  .button {
+    font-size: .6rem !important;
+    height: 2rem !important;
+    width: 6rem !important;
+  }
+}

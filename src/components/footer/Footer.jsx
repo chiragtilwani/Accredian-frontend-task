@@ -12,18 +12,6 @@ import { LiaCcDiscover } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  // const [email, setEmail] = useState(null);
-  // const [Subscribed, setSubscribed] = useState(false);
-
-  // function handleInputChange(evt) {
-  //   evt.preventDefault();
-  //   setEmail(evt.target.value);
-  // }
-
-  // function handleSubmitClick() {
-  //   setSubscribed((prev) => !prev);
-  // }
-
   return (
     <div className="footerOutterContainer">
       <div className="footerContainer">
@@ -92,35 +80,6 @@ const Footer = () => {
             amet, consectetur adipisicing elit. Consequuntur rerum hic debitis
             quis voluptate minima libero adipisci excepturi accusamus repellat.
           </p>
-          {/* <div>
-            {Subscribed ? (
-              <span
-                style={{
-                  color: "green",
-                  opacity: Subscribed ? "1" : "0",
-                  transitionDuration: ".2s",
-                }}
-              >
-                Subscribed Successfully !
-              </span>
-            ) : (
-              <>
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  className="footerInput"
-                  onChange={handleInputChange}
-                />
-                <button
-                  className="footerButton"
-                  disabled={email ? false : true}
-                  onClick={handleSubmitClick}
-                >
-                  Subscribe
-                </button>
-              </>
-            )}
-          </div> */}
           <div className="FooterPaymentIcons">
             <IoLogoPaypal style={{ fontSize: "1.5rem" }} />
             <TbBrandVisa style={{ fontSize: "1.5rem" }} />
@@ -130,8 +89,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyrightLine">
-        ©Copyright 2024 | Refer And Earn | All Rights Reserved | Powered by Chirag
-        Tilwani
+        ©Copyright 2024 | Refer And Earn | All Rights Reserved | Powered by
+        Chirag Tilwani
       </div>
     </div>
   );
